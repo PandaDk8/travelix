@@ -942,7 +942,7 @@ nav .search .icon-list {
 .contact__form input::placeholder,
 .contact__form textarea::placeholder {
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .contact__form__name {
