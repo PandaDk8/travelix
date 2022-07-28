@@ -1,3 +1,21 @@
+@font-face {
+  src: url("../font/beyond_the_mountains.ttf");
+  font-family: beyond;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(transparent, #30ff00);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(transparent, #00c6ff);
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -6,9 +24,6 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-}
-
-main {
 }
 
 /* Header */
@@ -85,22 +100,96 @@ nav .menu .item a:hover::after {
 }
 
 nav .search {
+  position: relative;
   max-width: 15%;
   color: #fff;
   font-size: 18px;
   padding: 12px;
-  cursor: pointer;
   text-align: right;
   background: none;
 }
 
 nav .search .icon-search {
   text-align: right;
+  cursor: pointer;
 }
 
 nav .search .icon-list {
   display: none;
+  cursor: pointer;
 }
+
+/* mobile */
+
+.checked {
+  display: none;
+}
+
+.menu__mobile {
+  font-family: beyond;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(-300deg, #fa9e1b, #8d4fff);
+  width: 320px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 30px 50px;
+  transform: translateX(100%);
+  transition: all 0.75s ease-in-out;
+  z-index: 999;
+}
+
+.checked:checked ~ .menu__mobile {
+  transform: translateX(0);
+}
+
+.menu__mobile__list {
+  list-style: none;
+}
+
+.menu__mobile__item {
+  text-align: left;
+  margin: 25px 0;
+}
+
+.menu__mobile__item:hover a {
+  color: #bbfa1b;
+}
+
+.menu__mobile__item a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 3px;
+}
+
+.menu__mobile i {
+  color: #fff;
+  font-size: 32px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.menu__mobile i:hover {
+  color: #bbfa1b;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.checked:checked ~ .overlay {
+  display: block;
+}
+/* End mobile */
 
 /*End Header */
 
@@ -138,7 +227,7 @@ nav .search .icon-list {
 
 .home__content p {
   font-size: 82px;
-  font-family: Beyond The Mountains;
+  font-family: beyond;
 }
 
 .home__btn {
@@ -349,6 +438,11 @@ nav .search .icon-list {
   flex-basis: 33.333%;
   height: 100%;
   padding: 0 12px;
+  transition: 0.75s;
+}
+
+.tour__item:hover {
+  transform: scale(1.1);
 }
 
 .tour__item-link {
@@ -612,6 +706,7 @@ nav .search .icon-list {
   color: #fff;
   font-weight: 700;
   background-color: #fa9e1b;
+  cursor: pointer;
 }
 
 .offers__item:nth-child(1) .offers__item-left {
@@ -674,6 +769,11 @@ nav .search .icon-list {
   color: #000;
   font-weight: 700;
   margin-top: 65px;
+  transition: 0.5;
+}
+
+.offers__item__more:hover {
+  color: rgb(173, 243, 34);
 }
 
 /* End offers */
@@ -707,6 +807,11 @@ nav .search .icon-list {
   margin: 0 12px;
   max-width: 33.333%;
   width: 33.333%;
+  transition: 0.75s;
+}
+
+.testimonials__item:hover {
+  transform: scale(1.1);
 }
 
 .testimonials__bg {
@@ -823,6 +928,7 @@ nav .search .icon-list {
   max-width: 25%;
   flex-basis: 25%;
   margin: 50px 0;
+  cursor: pointer;
 }
 
 .trending__item__img {
@@ -836,7 +942,7 @@ nav .search .icon-list {
   transition: 0.75s;
 }
 
-.trending__item__img:hover img {
+.trending__item:hover .trending__item__img img {
   transform: scale(1.1) rotate(2deg);
 }
 
@@ -975,6 +1081,10 @@ nav .search .icon-list {
   cursor: pointer;
 }
 
+.contact__form__btn:hover {
+  opacity: 0.9;
+}
+
 /* End contact */
 
 /* Footer */
@@ -1036,6 +1146,11 @@ footer {
   align-items: center;
   margin-right: 15px;
   margin-bottom: 15px;
+  transition: 0.25s;
+}
+
+.footer__icon__item:hover {
+  transform: translateY(-2px);
 }
 
 .footer__icon__item i {
@@ -1053,6 +1168,11 @@ footer {
 .blog__item {
   display: flex;
   margin-bottom: 20px;
+  transition: 0.25s;
+}
+
+.blog__item:hover {
+  transform: translateY(-2px);
 }
 
 .blog__item img {
@@ -1069,6 +1189,10 @@ footer {
   color: #fff;
   font-size: 14px;
   font-weight: 600;
+}
+
+.blog__item__content p:hover {
+  color: #fa9e1b;
 }
 
 .blog__item__content span {
@@ -1093,6 +1217,10 @@ footer {
   font-size: 12px;
 }
 
+.tag__item:hover {
+  background-color: #fa9e1b;
+}
+
 .contact__content__info {
   margin-bottom: 18px;
   display: flex;
@@ -1106,9 +1234,14 @@ footer {
 
 .contact__content__info span {
   color: #fff;
-  font-size: 13px;
+  font-size: 12px;
   margin-left: 12px;
-  font-weight: 600;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.contact__content__info span:hover {
+  color: #fa9e1b;
 }
 
 .coppyright {

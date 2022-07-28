@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- Scroll animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -33,9 +36,26 @@
 
             <div class="search">
                 <i class="fa-solid fa-magnifying-glass icon-search"></i>
-                <i class="fa-solid fa-list icon-list"></i>
+                <input id="checked" type="checkbox" name="" class="checked">
+                <label for="checked">
+                    <i class="fa-solid fa-list icon-list"></i>
+                </label>
+                <div class="menu__mobile">
+                    <ul class="menu__mobile__list">
+                        <li class="menu__mobile__item"><a href="">Home</a></li>
+                        <li class="menu__mobile__item"><a href="">About</a></li>
+                        <li class="menu__mobile__item"><a href="">Offers</a></li>
+                        <li class="menu__mobile__item"><a href="">News</a></li>
+                        <li class="menu__mobile__item"><a href="">Contact</a></li>
+                    </ul>
+                    <label for="checked">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+                </div>
+                <label for="checked" class="overlay"> </label>
             </div>
         </nav>
+
     </header>
 
     <main>
@@ -121,7 +141,7 @@
             </div>
         </div>
 
-        <div class="tour">
+        <div data-aos="zoom-in" class="tour">
             <div class="tour__container">
                 <h1 class="tour__title">We have the best tours</h1>
                 <p class="tour__des"> <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu convallis
@@ -179,7 +199,7 @@
 
         </div>
 
-        <div class="package">
+        <div data-aos="zoom-in" class="package">
             <div class="package__wrap">
                 <div class="package__contain">
                     <h1 class="package__title">MALDIVES DELUXE PACKAGE</h1>
@@ -204,7 +224,7 @@
             </div>
 
         </div>
-        <div class="offers">
+        <div data-aos="zoom-in" class="offers">
             <div class="offers__container">
                 <h1 class="offers__title">THE BEST OFFERS WITH ROOMS</h1>
                 <section class="offers__list">
@@ -318,7 +338,7 @@
                 </section>
             </div>
         </div>
-        <div class="testimonials">
+        <div data-aos="zoom-in" class="testimonials">
             <div class="testimonials__container">
                 <h1 class="testimonials__title">WHAT OUR CLIENTS SAY ABOUT US</h1>
                 <section class="testimonials__list">
@@ -375,7 +395,7 @@
                 </section>
             </div>
         </div>
-        <div class="trending">
+        <div data-aos="zoom-in" class="trending">
             <div class="trending__container">
                 <h1 class="trending__title">Trending now</h1>
                 <section class="trending__list">
@@ -463,7 +483,7 @@
                 </section>
             </div>
         </div>
-        <div class="contact">
+        <div data-aos="zoom-in" class="contact">
             <div class="contact-bg"></div>
             <div class="contact__container">
                 <div class="contact__null"></div>
@@ -575,5 +595,11 @@
 
     <!-- Font awersome -->
     <script src="https://kit.fontawesome.com/cb97e84c1a.js" crossorigin="anonymous"></script>
+
+    <!-- Scroll animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
 </html>
